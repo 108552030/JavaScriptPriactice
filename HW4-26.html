@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let str = '';
+        for (let i = 4; i >= 0; i--) {
+            for (let j = 0; j < 5; j++) {
+                if (j >= i) {
+                    str += '*';
+                } else {
+                    str += ' ';
+                }
+            }
+            console.log(str);
+            str = ''
+        }
+    </script>
+</body>
+
+</html>

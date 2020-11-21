@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let length = 84;
+        let width = 70;
+        let area = length * width;
+        let max_square_length;
+        let count_of_square;
+        // console.log(area);
+
+        for (let i = 1; i < 70; i++) {
+            if (area % (i ** 2) === 0) {
+                max_square_length = i;
+            }
+        }
+
+        count_of_square = area / (max_square_length ** 2);
+
+        console.log('Max square side length is ' + max_square_length);
+        console.log('Divide into ' + count_of_square + " squares");
+    </script>
+</body>
+
+</html>
