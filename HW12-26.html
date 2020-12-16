@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //make a random number between n to m
+        function random(n, m) {
+            //avoid  N greater then M
+            if (n > m) {
+                let tmp = n;
+                n = m;
+                m = tmp;
+            }
+            let seed = Math.random() * (m - n + 1) + n;
+            let randNum = Math.floor(seed);
+            return randNum;
+        }
+
+        function lotto() {
+            let arr = [];
+            //when array length greater then 6 , then stop the while loop
+            while (arr.length < 6) {
+                let rand = random(1, 49);
+                //use indexof to test Repeatability
+                if (arr.indexOf(rand) === -1) {
+                    arr.push(rand);
+                }
+            }
+            return arr;
+        }
+
+        console.log(lotto());
+        // let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        // for (let i = 0; i < 100; i++) {
+        //     arr[random(6, 10)]++;
+        // }
+        // console.log(arr);
+    </script>
+</body>
+
+</html>

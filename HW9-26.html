@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let cylinder = {
+            radius: 0.0,
+            height: 0.0,
+            getVolumn: function() {
+                return this.radius ** 2 * Math.PI * this.height;
+            }
+        }
+
+        cylinder.radius = 5;
+        cylinder.height = 10;
+
+        let answer = cylinder.getVolumn().toFixed(2);
+
+        console.log(answer);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id='frame'></div>
+    <script type="text/javascript">
+        let fr = document.getElementById('frame');
+        let color = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple'];
+        let arr = [];
+        let randSize = random(4, 7);
+        for (let i = 0; i < randSize; i++) {
+            let randNumber = random(0, 9);
+            let randColor = random(0, 7);
+            while (true) {
+                if (arr.indexOf(randColor) !== -1) {
+                    randColor = random(0, 7);
+                } else {
+                    arr.push(randColor);
+                    break;
+                }
+            }
+            // console.log(randNumber + " " + randColor);
+            let blo = document.createElement('span');
+            blo.innerText = randNumber.toString();
+            blo.style.color = color[randColor];
+            blo.style.fontSize = '50px';
+            fr.append(blo);
+
+        }
+
+
+
+
+
+
+
+        function random(n, m) {
+            //avoid  N greater then M
+            if (n > m) {
+                let tmp = n;
+                n = m;
+                m = tmp;
+            }
+            let seed = Math.random() * (m - n + 1) + n;
+            let randNum = Math.floor(seed);
+            return randNum;
+        }
+    </script>
+</body>
+
+</html>

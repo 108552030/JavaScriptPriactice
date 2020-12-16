@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        table {
+            text-align: center;
+            margin: auto;
+            /*border: 1px solid black;*/
+            width: 20%;
+        }
+
+        table, tr, th, td {
+            border: 1px solid black;
+            height: 20px;
+        }
+        th {
+            color: white;
+            background-color: #F37C22;
+
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+
+        }
+    </style>
+    <script type="text/javascript">
+        function init() {
+            let inputMonth = document.getElementById("monthSelect");
+            let dayBlock = document.getElementsByClassName("day");
+
+            inputMonth.addEventListener('change', function(e) {
+                let dates = inputMonth.valueAsDate;
+                let year = dates.getFullYear();
+                let month = dates.getMonth();
+                let date = dates.getDate();
+                let day = dates.getDay();
+
+                for (let i = 0; i < dayBlock.length; i++) {
+                    dayBlock[i].textContent = "";
+                }
+
+                for (let dayCount = 1; dayCount <= getMonthDay(year, month); dayCount++) {
+                    dayBlock[day + dayCount - 1].innerText = "" + dayCount;
+                }
+                console.log(getMonthDay(year, month));
+
+                console.log(year + " " + month + " " + date + " " + day);
+
+            });
+
+            function getMonthDay(year, month) {
+                let leapYear = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                let notLeapYear = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+                if (year % 4 === 0 && year % 100 !== 0) {
+                    return leapYear[month];
+                } else if (year % 400 === 0) {
+                    return leapYear[month];
+                } else {
+                    return notLeapYear[month];
+                }
+            }
+        }
+
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <div align="center">
+        <input id="monthSelect" type="month">
+    </div>
+    <table>
+        <tr>
+            <th>日</th>
+            <th>一</th>
+            <th>二</th>
+            <th>三</th>
+            <th>四</th>
+            <th>五</th>
+            <th>六</th>
+        </tr>
+        <tr>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let str = 'Thethe quick brown fox  the the jumps over the lazy dog';
+        let substr = 'the';
+
+        console.log(found(str, substr));
+
+        function found(str, substr) {
+            //set the String to UpperCase to get case insensitive result
+            str = str.toUpperCase();
+            substr = substr.toUpperCase();
+
+            let arr = [];
+            //use a pointer to get the start index
+            let ptr = 0;
+            let found = str.indexOf(substr, ptr);
+
+            while (found !== -1) {
+                arr.push(found);
+                //while there is a match ,change the pointer to the word to found next
+                ptr = found + 1;
+                found = str.indexOf(substr, ptr);
+            }
+            return arr;
+        }
+    </script>
+</body>
+
+</html>

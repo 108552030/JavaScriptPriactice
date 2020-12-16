@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body id="body">
+    <div id=timerDisplay></div>
+    <script type="text/javascript">
+        // 1.get element from html 
+        let timeDisplay = document.getElementById('timerDisplay');
+        // 2.create a new Element
+        let timer = document.createElement('div');
+        // 3.insert into 
+        timerDisplay.append(timer);
+        setInterval(function() {
+            let time = new Date();
+            timer.innerText = '現在時間:' + time.getFullYear() + '/' + time.getMonth() + '/' + time.getDay() + ' ' + time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
+
+        }, 1000);
+    </script>
+</body>
+
+</html>

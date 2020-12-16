@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+<style type="text/css">
+        .myclass1 {
+            font-size: 30px;
+            color: red;
+        }
+
+        .myclass2 {
+            font-size: 30px;
+            color: blue;
+        }
+</style>
+
+<body>
+    <div id='frame'></div>
+    <script type="text/javascript">
+        //get element by Id to catch div 
+        let myDiv = document.getElementById('frame');
+        for (let i = 1; i <= 10; i++) {
+            // create a new element by document.creatElement
+            let newElement = document.createElement('div');
+            //give the text into the block
+            newElement.innerText = 'Hello';
+            //make the color change by % 2
+            if (i % 2 === 0) {
+                newElement.style.color = 'red';
+            } else {
+                newElement.style.color = 'blue';
+            }
+            //change font size , count mutiply by 5
+            newElement.style.fontSize = (i * 3) + 'px';
+            //locate the element
+            myDiv.append(newElement);
+        }
+    </script>
+</body>
+
+</html>

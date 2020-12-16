@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var arr = [23, "th", 12, 3, 4, 53, "Green", "Orange", -9, "HelloJava", 556, 77.2, 34, 34, " helloJavascript", 23, -34, -5, "tb"];
+        let numberArray = [];
+        let stringArray = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            if (typeof(arr[i]) === "string") {
+                stringArray.push(arr[i]);
+            } else if (typeof(arr[i] === "number")) {
+                numberArray.push(arr[i]);
+            }
+        }
+        numberArray.sort(function(a, b) {
+            return a - b;
+        });
+
+        stringArray.sort();
+
+        arr = numberArray.concat(stringArray);
+
+        console.log(arr);
+        // console.log(stringArray);
+    </script>
+</body>
+
+</html>

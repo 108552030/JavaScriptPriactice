@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function timeFormat() {
+            let now = new Date();
+            let time = '現在時間 : ' + now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDate() + ' ';
+            let hours = parseInt(now.getHours());
+            if (hours > 12) {
+                time = time + (hours - 12) + ':' + now.getMinutes() + ' PM';
+            } else {
+                time = time + hours + ':' + now.getMinutes() + ' AM';
+            }
+            return time;
+
+        }
+
+        console.log(timeFormat());
+    </script>
+</body>
+
+</html>

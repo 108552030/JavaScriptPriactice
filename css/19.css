@@ -1,0 +1,28 @@
+        table, th, td {
+            border: 0px solid black;
+            padding: 4px;
+
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+        .bb {
+            height: 70px;
+            width: 70px;
+            background-color: pink;
+            /*opacity: 0.4;*/
+            border-radius: 20px;
+
+        }
+
+        .middleBlock {
+            height: 70px;
+            width: 70px;
+            background-color: white;
+        }
+
+        canvas:hover {
+            /*background-color: white;*/
+            opacity: 0.4;
+        }

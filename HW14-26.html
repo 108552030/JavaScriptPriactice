@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function camelCase(str) {
+            //split the string by space 
+            let strs = str.split(' ');
+            //create a new array to store processed word
+            let newArr = [];
+            for (let i = 0; i < strs.length; i++) {
+                //pick the first character
+                let first = strs[i].substring(0, 1);
+                //pick the last character
+                let last = strs[i].substring(1);
+                //if it's the first word of a string, then lowerCase else upperCase
+                if (i === 0) {
+                    first = first.toLowerCase();
+                } else {
+                    first = first.toUpperCase();
+                }
+                //concat th first and the last
+                let newWord = first + last;
+                //add to array
+                newArr.push(newWord);
+            }
+            //use join to turn array to string by ''
+            let newString = newArr.join('');
+            return newString;
+        }
+
+        console.log(camelCase('hello javascript world'));
+    </script>
+</body>
+
+</html>

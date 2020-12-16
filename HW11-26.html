@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+<script type="text/javascript">
+        console.log(randomNums(5, 7));
+
+        function randomNums(n, m) {
+            let arr = [];
+            let big = Math.max(n, m);
+            let small = Math.min(n, m);
+            for (let i = 0; i < 4; i++) {
+                arr.push(Math.floor(Math.random() * Math.abs(big - small + 1) + small));
+            }
+            return arr;
+        }
+
+        class Animal {
+            static staticField = 'static field';
+        }
+
+        console.log(Animal.staticField);
+</script>
+
+<body>
+</body>
+
+</html>
